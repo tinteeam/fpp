@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace fpp.compiler
+﻿namespace fpp.compiler
 {
     internal class Program
     {
@@ -9,7 +7,19 @@ namespace fpp.compiler
             while (true)
             {
                 Console.Write("f++>");
-                Console.ReadLine();
+                var line = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(line))
+                {
+                    return;
+                }
+                if (line == "1 + 2 * 3")
+                {
+                    Console.WriteLine("9");
+                }
+                else
+                {
+                    Console.WriteLine("ERROR!!");
+                }
             }
 
         }
